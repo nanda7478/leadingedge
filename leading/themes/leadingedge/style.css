@@ -1,0 +1,491 @@
+/*
+Theme Name: Leading Edges
+Theme URI: https://wordpress.org/themes/twentysixteen/
+Author: the WordPress team
+Author URI: https://wordpress.org/
+Description: Twenty Sixteen is a modernized take on an ever-popular WordPress layout — the horizontal masthead with an optional right sidebar that works perfectly for blogs and websites. It has custom color options with beautiful default color schemes, a harmonious fluid grid using a mobile-first approach, and impeccable polish in every detail. Twenty Sixteen will make your WordPress look beautiful everywhere.
+Version: 1.5
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
+Text Domain: twentysixteen
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+
+/**
+ * Table of Contents
+ *
+ * 1.0 - Normalize
+ * 2.0 - Genericons
+ * 3.0 - Typography
+ * 4.0 - Elements
+ * 5.0 - Forms
+ * 6.0 - Navigation
+ *   6.1 - Links
+ *   6.2 - Menus
+ * 7.0 - Accessibility
+ * 8.0 - Alignments
+ * 9.0 - Clearings
+ * 10.0 - Widgets
+ * 11.0 - Content
+ *    11.1 - Header
+ *    11.2 - Posts and pages
+ *    11.3 - Post Formats
+ *    11.4 - Comments
+ *    11.5 - Sidebar
+ *    11.6 - Footer
+ * 12.0 - Media
+ *    12.1 - Captions
+ *    12.2 - Galleries
+ * 13.0 - Multisite
+ * 14.0 - Media Queries
+ *    14.1 - >= 710px
+ *    14.2 - >= 783px
+ *    14.3 - >= 910px
+ *    14.4 - >= 985px
+ *    14.5 - >= 1200px
+ * 15.0 - Print
+ */
+
+
+/**
+ * 1.0 - Normalize
+ *
+ * Normalizing styles have been helped along thanks to the fine work of
+ * Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+ */
+
+ 
+
+
+
+body { margin: 0; padding: 0px; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary { display: block; }
+
+audio,
+canvas,
+progress,
+video { display: inline-block; vertical-align: baseline; }
+
+audio:not([controls]) { display: none; height: 0; }
+ [hidden], template {
+ display: none;
+}
+
+a { background-color: transparent; text-decoration: none; color: #000; }
+
+ul { padding: 0px; margin: 0px; }
+
+ 
+
+.wpcf7-submit,
+.btn-primary,
+.colored_outline_btn_hover { border: 2px solid #2791D2; color: #2791D2; font-size: 14px; text-transform: uppercase; padding: 15px 35px; font-family: 'proxima_novasemibold'; cursor:pointer; letter-spacing:1px; }
+
+.history-planning-section .btn-primary:hover,
+.wpcf7-form .wpcf7-submit:hover,
+.colored_outline_btn_hover:hover { border-color:#2d2d2d; background: #2d2d2d; color: #fff; }
+ h4 {
+font-size:18px;
+}
+
+.table { display: table; height: 100%; width: 100%; }
+
+.table-cell { display: table-cell; vertical-align: middle; }
+
+.offering-subpage-section img,
+.leas-offerings-section img, 
+.careers-contact-section img{ display:block; width:100%; }
+.col-bg {min-height: 550px; background-size: cover;background-position: center;}
+@media only screen and (max-width: 991px) {
+	.col-bg {
+		min-height: 400px;
+	}
+} 
+
+@media only screen and (min-width: 1500px) {
+	.col-bg {
+		min-height: 700px;
+	}
+}
+ .right.table { float:right; }
+ 
+.right-aircraft .btn { margin-top:35px; display:inline-block; }
+ 
+ 
+ .header-social-icon ul li a:hover,
+ .leading-edge-social-icon ul li a:hover { background:#2d2d2d; color:#fff; }
+ 
+ .site-header-menu li a:hover,
+.leading-edge-footer-menu li a:hover { color:#2791D2; }
+ 
+
+
+.leadingedge_header .dropdown-toggle { display:none;}
+.leadingedge_header .sub-menu{ display:none; position:absolute; width:220px; top:100%; padding:10px 0; z-index:1; left:0px; background:#fff; }
+.leadingedge_header li .sub-menu li {padding:2px 20px; text-align:left; display:block; }
+.leadingedge_header li:hover .sub-menu{ display:block; }
+.leadingedge_header li.menu-item { position:relative;}
+
+.leadingedge_header li .sub-menu li a{ font-size:15px; }
+
+
+
+@media (max-width:1350px) { 
+.right-who, .right-aircraft { padding:20px; }
+
+.addr-phone-mail-section .col-lg-4 { padding:40px 20px; }
+.careers-contact-section .texts { padding:20px 40px; }
+
+.careers-contact-section h2 { margin:0 0 15px 0px; font-size:30px; }
+.contact-us-today { padding-top:0px; }
+
+.leas-offerings-section .right-aircraft { padding:60px 90px; }
+
+
+.subpage-block-two .right-aircraft .btn{ margin-top:15px; }
+
+.teams-header-title-image h2{ font-size:30px; } 
+
+}
+
+
+@media (max-width:1199px) { 
+
+.site-header-menu li{ padding:0 10px; }
+.leadingedge_header .logo_center { margin:0 -10px; }
+
+.wireship_slider .carousel-item { max-height:500px; }
+.right-who, .right-aircraft { padding:20px; }
+
+h2.colored_heading { margin-top:0px; }
+.aircraft-who-section .btn { margin-top:15px; }
+
+/* .footer-background-image .col-lg-5:after { content:" "; position:absolute; left:-50px; top:0px; width:200%; height:100%; display:block; background:url(images/full-bg2.png) no-repeat 0 0; background-size:auto 100%; z-index:0; } */
+.get-edge-option a { line-height:45px; }
+
+.footer-background-image  { background:#fff; overflow:hidden; }
+.get-edge-option a { font-size:20px; }
+.footer-background-image .logos { margin:20px 0px; }
+.footer-background-image .col-lg-5 ul { position:relative; z-index:1; }
+
+.copyright-text { padding:10px 0; }
+.copyright-text { margin-top:0px; }
+
+.addr-phone-mail-section .col-lg-4{ font-size:16px; }
+.addr-phone-mail-section h4 { font-size:14px; margin:10px 0 20px 0; }
+
+.inventory-image-content{ line-height:1.2;  }
+.inventory-content-block h1 { font-size:16px; }
+
+.inventory-content-block h1 { margin:0 0 10px 0; }
+
+.leas-offerings-section .right-aircraft { padding:50px; }
+.leas-offerings-section h6 { margin:0px; }
+
+.leading-offer-service h2 { font-size:24px; }
+
+.single-team-header { background-size:350px; }
+.teams-header-title-image h2 { font-size:24px; }
+
+}
+
+@media (max-width:1024px) { 
+
+.right-who, .right-aircraft { font-size:14px; }
+.aircraft-who-section .btn { margin-top:5px; }
+.aircraft-business-section { padding:50px 0 30px 0; }
+
+.business-total{ font-size:60px; }
+.business-total span,
+.aircraft-business-section{ font-size:18px; }
+
+.aircraft-business-section img { width:50px; left:10px; }
+
+.nara-section p { margin:10px 0; font-size:18px; }
+.nara-section { padding:30px 0; }
+.nara-section h2 { margin-top:30px; }
+.nara-section .btn { margin-top:20px; }
+.news-right h2.widget-title1{ font-size:22px; }
+
+.news-right .news-left h3 { font-size:16px; line-height:22px; }
+
+.news-left .links { background-size:30px; padding:5px 40px 5px 0; background-position:right center;  }
+.news-left .news-content { padding:10px; }
+
+.inventory-page-section .col-lg-6 { padding:15px; }
+
+.airfram-inventory-section .sub-tittle{ margin:30px 0; }
+.airfram-inventory-section .raw-bar-content { margin:0px; } 
+
+.leas-offerings-section h6{ font-size:20px; }
+
+.story-page-content { font-size:22px; }
+
+.team-page-section br { display:none; }
+.history-planning-section h2 { font-size:30px; margin-bottom:10px; }
+.icon-title-button { padding:20px; }
+
+
+
+
+}
+
+
+@media (max-width:991px) { 
+.m-header{ display:block; clear:both; }
+.leadingedge_header{ display:none; }
+
+.logo_center{ float:left; }
+.humbers{ float:right;line-height: 1;margin-top: 8px; }
+
+/* The side navigation menu */
+
+.sidenav { height: 100%; /* 100% Full-height */ width: 0; /* 0 width - change this with JavaScript */ position: fixed; /* Stay in place */ z-index:9; /* Stay on top */ top: 0; /* Stay at the top */ right: 0; background-color: #2791D2; /* Black*/ overflow-x: hidden; /* Disable horizontal scroll */ padding-top:100px; /* Place content 60px from the top */ transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */ }
+
+.topheader .menu li { display: block; clear: both; }
+
+/* The navigation menu links */
+
+.sidenav a { text-decoration: none; color: #fff; display: block; transition: 0.3s; }
+
+.customlogo { display: none !important; }
+
+/* When you mouse over the navigation links, change their color */
+
+.sidenav a:hover { color: #f1f1f1; }
+
+/* Position and style the close button (top right corner) */
+
+.sidenav .closebtn { position: absolute; top:35px; left: 25px; font-size:44px; margin-left: 0; }
+
+.manusection .menu li a:hover,
+.manusection .menu li.current_page_item a { background:#2d2d2d; }
+
+.manusection .menu li a { padding:10px; color: #fff; font-size:18px; text-transform:uppercase; }
+
+.closebtn,
+ .humbers { display: block; }
+
+.site-header-main { padding:15px 0; }
+
+.header-social-icon{ display:block; margin:10px 0; text-align:center; float:none; }
+
+.header-social-icon ul li a { height:30px; width:30px; padding:7px; border:1px solid #fff; } 
+
+.wireship_slider .carousel-item { min-height:400px; max-height:400px; }
+.business-total span { width:95px; }
+.business-total span, .aircraft-business-section { font-size:15px; }
+
+.business-total{ font-size:50px; }
+
+.aircraft-business-section img { width:40px; top:-15px; }
+.aircraft-business-section .col-md-4 { padding-left:50px; }
+
+.our-inventory-section{ padding:30px 0; }
+.our-inventory-section .btn { margin-top:30px; }
+.our-inventory-section h4 { margin:5px 0; }
+
+.icon-title-button{ padding:20px; }
+.history-planning-section h2 { font-size:24px; margin:0 0 15px 0; }
+
+.footer-background-image .col-lg-5::after { left:-30px; }
+
+.leading-edge-social-icon{ padding:10px 0; }
+.leading-edge-footer-menu{ padding-top:15px; }
+.leading-edge-footer-menu li{ margin-bottom:5px; }
+
+.leading-edge-footer-menu .primary-menu > li > a { margin-bottom:10px; }
+.copyright-text { padding-bottom:0px; }
+
+.leading-edge-footer-menu .primary-menu > li{ width:14%; }
+
+.single-inventory-header .content_part, .inner-pages-banner .content_part{ font-size:28px; }
+
+
+.inner-pages-banner h1 { font-size:16px; }
+
+.page-template-offering-sub-page .inner-pages-banner, .page-template-offering-page .inner-pages-banner,
+.inner-pages-banner { height:300px; }
+
+.right-aircraft .btn { margin-top:15px; }
+
+.nara-section .col-lg-12{ padding:0px 15px; }
+
+.news-page { padding:20px 0; }
+.news-left { margin:15px 0; }
+.news-left h3 { font-size:24px; }
+
+.news-right { padding-left:15px; }
+ 
+ .inventory-image-content{ line-height:1.6;  }
+.inventory-content-block h1 { font-size:16px; }
+
+.single-inventory-header .blog-thumb-img  { padding:0px; }
+.single-inventory-header { height:auto; }
+
+.single-inventory-header .inner-pages-content-table { padding:30px; }
+.airfram-inventory-section { font-size:16px; line-height:1.8; }
+
+.leading-offer-service,
+.leas-offerings-section .right-aircraft{ padding:30px; } 
+
+.the-edge-list-section .the-edge-block { font-size:16px; }
+.the-edge-list-section .the-edge-block { padding:30px 0; }
+
+.story-page-content{ padding:20px 20px 20px 40px; font-size:18px; }
+.story-page-content h2 { font-size:24px; }
+.logo_center { margin:10px 0; }
+.team-page-section{ font-size:16px; }
+
+	.manusection .menu li { list-style:none; }
+ 
+.sidenav .dropdown-toggle { background: url(images/arrow.png) no-repeat 0 0;display:block ; width: 24px;  height: 24px; text-indent: -999999px; font-size: 0px; margin: -35px 10px 0 0; float: right; cursor: pointer;  }
+	
+.manusection .menu li .sub-menu { display:none;}
+.manusection .menu li .sub-menu.toggled-on { display:block;}
+
+.manusection .menu li .sub-menu li a{ font-size: 14px; padding: 5px; }
+
+
+}
+
+@media (max-width:767px) { 
+
+ 
+
+.m-show{ display:block; }
+.d-show{ display:none; }
+
+
+.aircraft-business-section{ padding:10px 0; text-align:center; }
+
+.aircraft-business-section .col-md-4{ padding-left:15px; margin:10px 0; }
+.aircraft-business-section img{ position:relative; top:0px; left:0px; display:none; }
+
+.business-total span,
+.business-total div{ display:inline-block; float:none; width:auto; text-align:left; padding:0px; vertical-align:middle; }
+
+
+.our-inventory-section h2.main-head { font-size:24px; margin-bottom:10px; }
+.our-inventory-section img {max-width:200px; margin-top:10px; }
+
+.our-inventory-section h4{ font-size:16px; }
+.history-planning-section .auick_resource { padding:20px 0; }
+
+.history-planning-section .btn-primary,
+.wpcf7-submit, .btn-primary, .colored_outline_btn_hover { padding:10px 25px; border-width:1px;  }
+
+.footer-background-image .col-lg-5::after { left:-5px; }
+.leading-edge-footer-menu { display:none; }
+.carousel-caption-table-cell.text-left h1 { font-size:32px; }
+
+.left-part { width:100%; padding:0 30px;  }
+.left-part br { display:none; }
+
+.page-template-offering-sub-page .inner-pages-banner, .page-template-offering-page .inner-pages-banner,
+.inner-pages-banner{ height:250px; }
+
+.nara-section p { font-size:14px; }
+.nara-section p br { display:none; }
+
+.news-left h3 { font-size:18px; }
+.back-to-news { padding:10px 0; }
+
+.blog-tittle { font-size:24px; }
+
+.post-thumbnail { margin-bottom:20px; }
+
+.widget_categories ul li { padding:5px 0; display:inline-block }
+
+.contact-us-today{ font-size:16px; }
+
+.inventory-page-section .quick-list { margin:30px 0; }
+.quick-list > li { padding:0 10px; }
+
+.quick-list li a { font-size:16px; }
+
+.single-inventory-header { height:auto; }
+.airfram-inventory-section { font-size:14px; line-height:1.6; }
+
+.the-edge-section .container { width:100%; padding:0px; overflow:hidden; max-width:100%; }
+ 
+ .the-edge-image.img-right { width:100% !important; }
+ 
+ .the-edge-list-section .the-edge-block { text-align:center; }
+ 
+ .story-page-section .row .col-md-6:nth-child(1)::after { display:none; }
+ .story-page-section .row .col-md-6:nth-child(1) { border:none; }
+ 
+ .story-page-content { padding:20px; }
+ .team-page-section { padding:20px 0; }
+ 
+.team-post-section section { margin:0px; }
+.single-team-header { margin-bottom:30px; }
+.teams-header-title-image{ padding:0 20px; }
+
+.single-inventory-header .content_part, .inner-pages-banner .content_part { font-size:24px; }
+
+.icon-title-button { border-width:1px; }
+  
+}
+
+@media (max-width:479px) { 
+.page-template-offering-sub-page .inner-pages-banner, .page-template-offering-page .inner-pages-banner,
+.inner-pages-banner { height:200px; }
+.single-inventory-header { height:auto; }
+ .inventory-image-content{ line-height:1.3;  }
+.story-page-content { font-size:14px; }
+.leading-offer-service h2 { font-size:18px; }
+
+.wireship_slider .carousel-item {
+    min-height:300px;
+    max-height:300px;
+}
+.history-planning-section h2 br{ display:none; }
+h2.colored_heading{ font-size:24px; }
+.history-planning-section h2 { font-size:18px; }
+
+.profile-document-button a { padding: 5px 15px; font-size: 14px; }
+.profile-document-button div { margin: 0 5px; }
+
+.page-id-375 .inner-pages-content-table-cell { text-align: center; }
+.page-id-375 .inner-pages-banner h1 { padding-bottom: 20px; }
+
+.page-id-375 .inner-pages-banner { height: 150px; }
+}
+
+@media (max-width:360px) { 
+
+.get-edge-option a { font-size:13px; }
+
+}
+
+.flexible-block-container .row:nth-child(even) {
+	flex-direction: row-reverse;
+}
+
+.flexible-block-container a {
+	color: #2796d7;
+}
+
+.nara-image img {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 15px;
+}
